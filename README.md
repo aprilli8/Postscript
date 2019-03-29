@@ -1,11 +1,11 @@
 # Lab 6: P.S. It's Just a Stack
 
 ## Useful Links
- * [Course Homepage](https://www.cs.williams.edu/~cs136/index.html) (with TA schedule)
- * [Lab Webpage](https://www.cs.williams.edu/~cs136/labs/postscript.html)
- * [Token](https://www.cs.williams.edu/~cs136/labs/javadoc/Token.html) documentation
- * [Reader](https://www.cs.williams.edu/~cs136/labs/javadoc/Reader.html) documentation
- * [SymbolTable](https://www.cs.williams.edu/~cs136/labs/javadoc/SymbolTable.html) documentation
+ * [Course Homepage](https://williams-cs.github.io/cs136s19-www/) (with TA schedule)
+ * [Lab Webpage](https://williams-cs.github.io/cs136s19-www/schedule.html)
+ * [Token](https://williams-cs.github.io/cs136s19-www/assets/labs/lab6/javadoc/Token.html) documentation
+ * [Reader](https://williams-cs.github.io/cs136s19-www/assets/labs/lab6/javadoc/Reader.html) documentation
+ * [SymbolTable](https://williams-cs.github.io/cs136s19-www/assets/labs/lab6/javadoc/SymbolTable.html) documentation
 
 
 ## Repository Contents
