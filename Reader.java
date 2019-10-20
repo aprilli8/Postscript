@@ -159,7 +159,7 @@ public class Reader extends AbstractIterator<Token>
 	} else if (s.equals("true") || s.equals("false")) { // booleans
 	    result = new Token(s.equals("true"));
 	} else try {
-	    Double d = Double.parseDouble(s); // doubles (numbers)
+	    Double d = Double.valueOf(s); // doubles (numbers)
 	    result = new Token(d.doubleValue());
 	} catch (NumberFormatException e) {
 	    result = new Token(s);  // all others are symbols
