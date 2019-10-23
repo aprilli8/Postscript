@@ -94,7 +94,7 @@ public class Reader extends AbstractIterator<Token>
     {
 	Assert.pre(false,"Not implemented.");
 	return null;
-    }	
+    }
 
     /**
      * If this is a list, resets the reader back to the beginning.
@@ -187,4 +187,3 @@ public class Reader extends AbstractIterator<Token>
 	}
     }
 }
-

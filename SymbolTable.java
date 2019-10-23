@@ -33,7 +33,7 @@ public class SymbolTable
      */
     public boolean contains(String symbol)
     {
-	Association<String,Token> a = 
+	Association<String,Token> a =
 	    new Association<String,Token>(symbol,null);
 	return table.contains(a);
     }
@@ -47,7 +47,7 @@ public class SymbolTable
      */
     public void add(String symbol, Token value)
     {
-	Association<String,Token> a = 
+	Association<String,Token> a =
 	    new Association<String,Token>(symbol,value);
 	if (table.contains(a)) table.remove(a);
 	table.addFirst(a);
@@ -60,7 +60,7 @@ public class SymbolTable
      */
     public Token get(String symbol)
     {
-	Association<String,Token> a = 
+	Association<String,Token> a =
 	    new Association<String,Token>(symbol,null);
 	if (table.contains(a)) {
 	    a = (Association<String,Token>)table.remove(a);
@@ -78,7 +78,7 @@ public class SymbolTable
      */
     public Token remove(String symbol)
     {
-	Association<String,Token> a = 
+	Association<String,Token> a =
 	    new Association<String,Token>(symbol,null);
 	if (table.contains(a)) {
 	    a = table.remove(a);

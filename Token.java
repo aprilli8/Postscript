@@ -78,7 +78,7 @@ public class Token
 
     /**
      * Construct a numeric token.
-     * 
+     *
      * @param value the numeric value of the token
      */
     public Token(double value)
@@ -120,7 +120,7 @@ public class Token
 	this.procedure = proc;
     }
 
-    
+
     /**
      * Return the kind of token.  Great for use in switch statements.
      * @return integer representing the kind of the token, usually
@@ -270,4 +270,3 @@ public class Token
 	return result;
     }
 }
-
