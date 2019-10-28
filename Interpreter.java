@@ -7,10 +7,10 @@ public class Interpreter {
 	private StackList<Token> stack;
 	private SymbolTable sym;
 
-  public Interpreter(){
-    stack = new StackList<Token>();
+	public Interpreter(){
+		stack = new StackList<Token>();
 		sym = new SymbolTable();
-  }
+	}
 
 	//pre: stack is not empty
 	//post: removes last element in stack
@@ -21,29 +21,29 @@ public class Interpreter {
 
 	//pre: none
 	//post: prints out every element of stack in the same line
-  public void pstack(){
-    Iterator<Token> i = stack.iterator();
+	public void pstack(){
+		Iterator<Token> i = stack.iterator();
 		Token t;
 		if(stack.empty()){
 			System.out.println("");
 		} else {
 			while(i.hasNext()){
 				t = i.next();
-      	System.out.print(t+" ");
-    	}
-		System.out.println("");
-  	}
+				System.out.print(t+" ");
+			}
+			System.out.println("");
+		}
 	}
 
 	//pre: the size of stack is greater than or equal to 2
 	//post: the last two elements in stack are removed and their sum is added to stack
-  public void add(){
+	public void add(){
 		Assert.pre(stack.size() >= 2, "Not enough elements.");
 		double x = stack.pop().getNumber();
-	  double y = stack.pop().getNumber();
-	  Token toke = new Token(x+y);
-	  stack.push(toke);
-  }
+		double y = stack.pop().getNumber();
+		Token toke = new Token(x+y);
+		stack.push(toke);
+	}
 
 	//pre: the size of stack is greater than or equal to 2
 	//post: the last two elements in stack are removed and their difference is added to stack
@@ -148,17 +148,17 @@ public class Interpreter {
 
 	//pre: read is a valid Reader
 	//post: every element in read is analyzed and their corresponding code is executed
-  public void interpret(Reader read){
-    Token t;
+	public void interpret(Reader read){
+		Token t;
 		//will run as long as there is input from read
-    while(read.hasNext()){
-      t = read.next();
-      if(t.isSymbol() && t.getSymbol().equals("quit")){
-        break;
-      }
-      else if(t.isNumber() || t.isBoolean()){
-        stack.push(t);
-      }
+		while(read.hasNext()){
+			t = read.next();
+			if(t.isSymbol() && t.getSymbol().equals("quit")){
+				break;
+			}
+			else if(t.isNumber() || t.isBoolean()){
+				stack.push(t);
+			}
 			//calls interpret on the value of the symbol if symbol exists in SymbolTable
 			else if(t.isSymbol() && sym.contains(t.getSymbol())){
 				interpret(new Reader(sym.get(t.getSymbol())));
@@ -183,56 +183,56 @@ public class Interpreter {
 				}
 			}
 			//runs a switch that checks for every defined operation that calls the corresponding method
-      else if(t.isSymbol()){
-        switch(t.getSymbol()){
+			else if(t.isSymbol()){
+				switch(t.getSymbol()){
 					case "pop":
-            pop();
-						break;
+					pop();
+					break;
 					case "pstack":
-	          pstack();
-						break;
+					pstack();
+					break;
 					case "add":
-            add();
-            break;
-          case "sub":
-            sub();
-						break;
+					add();
+					break;
+					case "sub":
+					sub();
+					break;
 					case "mul":
-	          mul();
-						break;
+					mul();
+					break;
 					case "div":
-						div();
-						break;
+					div();
+					break;
 					case "dup":
-						dup();
-						break;
+					dup();
+					break;
 					case "exch":
-						exch();
-						break;
+					exch();
+					break;
 					case "eq":
-						eq();
-						break;
+					eq();
+					break;
 					case "ne":
-						ne();
-						break;
+					ne();
+					break;
 					case "ptable":
-						ptable();
-						break;
+					ptable();
+					break;
 					case "lt":
-						lt();
-						break;
-          default:
-						System.out.println("Not a valid symbol.");
-        }
-      }
-    }
-  }
+					lt();
+					break;
+					default:
+					System.out.println("Not a valid symbol.");
+				}
+			}
+		}
+	}
 
 	//pre: none
 	//post: a new Interpreter object is created and a new Reader is created and passed into interpret()
-  public static void main(String[] args){
-    Interpreter interp = new Interpreter();
-    Reader r = new Reader();
-    interp.interpret(r);
-  }
+	public static void main(String[] args){
+		Interpreter interp = new Interpreter();
+		Reader r = new Reader();
+		interp.interpret(r);
+	}
 }
