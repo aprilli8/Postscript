@@ -1,3 +1,11 @@
+# Feedback
+ * Good coding style. Pre and post conditions could be a little more specific.
+ * There needed to be Asserts checking the type of token in some methods.
+ * Think about tying together methods that have the same asserts and general functions such as add, sub, mul, and div so you don't repeat code.
+
+__Lab 6 Score: 25/26: 19/20 for program; 6/6 for problems__
+__Reviewed by Bill__
+
 # Lab 6: P.S. It's Just a Stack
  * [Course Homepage](https://williams-cs.github.io/cs136-f19-www/) (with TA schedule)
  * [Lab Webpage](https://williams-cs.github.io/cs136-f19-www/labs/postscript.html)
