@@ -35,6 +35,8 @@ public class Interpreter {
 		}
 	}
 
+//$ (-1) in add, sub, mul, div, and lt you need to check if the tokens are numbers. In div you need to check that the second value is not zero.
+
 	//pre: the size of stack is greater than or equal to 2
 	//post: the last two elements in stack are removed and their sum is added to stack
 	public void add(){
